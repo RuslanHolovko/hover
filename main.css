@@ -1,0 +1,162 @@
+body{
+	font-family: 'Raleway', sans-serif;
+	color: #f0f0f0;
+}
+
+.products{
+	height: auto;
+	width: 100%;
+}
+
+.products ul,
+.products li{
+	list-style-type: none;
+}
+
+.products li{
+	overflow: hidden;
+	position: relative;
+	width: 300px;
+	display: inline-block;
+}
+
+.products li:hover .description{
+	opacity: 1;
+	bottom: 0;
+	transform: rotateY(0deg);
+}
+
+.products img{
+	width: 100%;
+}
+
+.products .description{
+ color: #010101;
+ position: absolute;
+ background: rgba(227, 227, 227, 0.8);
+ width: inherit;
+ height: 100%;
+ bottom: -100px;
+ opacity: 0;
+ padding-top: 30px;
+ text-align: center;
+ transition: all .3s;
+ transform: rotateY(45deg); 
+}
+
+a{
+	text-decoration: none;
+}
+
+#modal-window{
+	position: absolute;
+	padding: 50px 30px;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	width: 500px;
+	height: 200px;
+	display: none;
+	pointer-events: none;
+	background: rgba(0,0,0,0.9);
+	animation:  Modal .5s;
+}
+
+#modal-window:target{
+	pointer-events: auto;
+	display: block;
+}
+
+#modal-window .close{
+	color: #fff;
+	padding: 10px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	display: block;
+	background: rgba(1,2,4,0.4);
+	transition: all .3s;
+}
+
+#modal-window .close:hover{
+	background: rgba(0, 131, 255, 0.9);
+}
+
+.button{
+	background: #c3c3c3;
+	border-radius: 5px;
+	color: #000;
+	display: block;
+	margin: 0 auto;
+	padding: 10px 25px;
+	transition: all .3s; 
+	width: 60px;
+}
+
+.button:hover{
+	background: #4e4e4e;
+	color: #fff;
+}
+
+#modal-window form{
+	width: 400px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#modal-window label{
+	display: inline-block;
+	width: 100px;
+}
+
+#modal-window label:hover{
+	cursor: pointer;
+}
+
+#modal-window .send{
+	display: block;
+	margin: 30px auto;
+	background:  rgba(0, 131, 255, 0.9);
+	border: none;
+	border-radius: 5px;
+	padding: 10px 25px 5px 25px;
+	color: #fefefe;
+}
+
+#modal-window .send:hover{
+	cursor: pointer;
+}
+
+#modal-window input[type="text"]{
+	vertical-align: center;
+	height: 20px;
+	background: transparent;
+	border-radius: 2px;
+	outline: none;
+	box-shadow: 0 0 1px rgba(0, 131, 255, 1);
+	border: none;
+	margin-left: 20px;
+	color: #f0f0f0;
+	padding: 10px 25px;
+}
+
+#modal-window .second{
+	margin-top: 30px;
+}
+
+#modal-window input[type="text"]:focus{
+	box-shadow: 0 0 10px rgba(0, 131, 255, 0.9);
+}
+
+@keyframes Modal{
+	0%{
+		left: -1000px;
+		opacity: 0;
+	}
+	100%{
+		left: 0;
+		opacity: 1;	
+	}
+}
